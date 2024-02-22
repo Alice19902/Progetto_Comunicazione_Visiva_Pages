@@ -1,0 +1,515 @@
+:root{
+    --primary-color: #212121;
+    --secondary-color: #FFFFE3;
+    --tertiary-color: #80D721;
+    --light-color:#B46B3A;
+    --dark-color:#534631;
+    --ombra: #A4A292;
+    --dark-color-opacity-70: #534631b3;
+    --bs-dropdown-color: var(--primary-color);
+    min-width: 1024px;
+}
+
+@font-face {
+    font-family: "Berkshire_Swash";
+    src: url("../font/BerkshireSwash-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gupter";
+    src: url("../font/Gupter/Gupter-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gupter Medium";
+    src: url("../font/Gupter/Gupter-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Gupter Bold";
+    src: url("../font/Gupter/Gupter-Bold.ttf");
+}
+.h1{
+    font-family: "Berkshire_Swash", fantasy;
+    font-size: clamp(2.5em, 4em, 4em);
+    color: var(--secondary-color);
+}
+
+.h2{
+    font-family: "Berkshire_Swash", fantasy;
+    font-size: clamp(1.75em, 3.25em, 3.5em);
+    color: var(--secondary-color);
+}
+
+.h3{
+    font-family: "Berkshire_Swash", fantasy;
+    font-size: clamp(1.375em, 2.5em, 3em);
+    color: var(--secondary-color);
+}
+
+.h3{
+    font-family: "Berkshire_Swash", fantasy;
+    font-size: clamp(1.375em, 2.5em, 3em);
+    color: var(--secondary-color);
+}
+
+.h4{
+    font-family: "Berkshire_Swash", fantasy;
+    font-size: clamp(1.375em, 2.25em, 3em);
+    color: var(--secondary-color);
+}
+
+
+.bodycopy{
+    font-family: "Gupter", serif;
+    font-size: clamp(1em, 1.50em, 1.75em);
+    color: var(--secondary-color);
+}
+
+.medium{
+    font-family: "Gupter Medium", serif;
+    font-size: clamp(1.5em, 2em, 2em);
+    color: var(--secondary-color);
+}
+
+.smallcopy{
+    font-family: "Gupter", serif;
+    font-size: clamp(0.75em, 1.15em, 1.25em);
+    color: var(--secondary-color);
+
+}
+
+
+html {
+    background-color: var(--primary-color);
+}
+
+.float {
+    box-sizing: border-box;
+    transform: translatey(0px);
+    animation: float 2s ease-in-out infinite;
+}
+
+.float1 {
+    box-sizing: border-box;
+    transform: translatey(0px);
+    animation: float1 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-5px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes float1 {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(5px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.sign{
+    display: none;
+    text-shadow: 0 5px 15px  rgba(0, 0, 0, 0.6);
+}
+
+.sign_h:hover + .sign{
+    display: block;
+
+}
+
+.blur {
+    display: none;
+    top: 0;
+    left:0;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    height: 110vh;
+    width: 110vw;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+nav{
+    top: 50%;
+    left: 2%;
+    z-index: 11;
+    background-color: var(--dark-color-opacity-70);
+    padding-right: 100px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    transition: 0.5s;
+}
+
+
+.menu {
+    right: -44px;
+    top: calc(50% - 44px);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    bottom: 0;
+}
+
+#navbarNav {
+    background-color: rgba(33, 33, 33, 0.8);
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+}
+
+li {
+    position: relative;
+}
+
+.nav-link {
+    padding: 10px;
+    color: var(--secondary-color);
+}
+
+.nav-item {
+    font-family: "Berkshire_Swash", fantasy;
+    font-size: 1.5rem;
+}
+
+.nav-link:hover{
+    color: var(--primary-color);
+}
+
+.navbar-nav {
+    flex: 1;
+    margin: auto !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+li::after {
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    background-color: var(--secondary-color);
+    content: "";
+    bottom: -1.5px;
+    rotate: 45deg;
+    right: -1.5px;
+}
+
+.menu.open svg rect {
+    fill: var(--secondary-color);
+}
+
+.menu svg rect {
+    transition: 0.2s;
+    fill: var(--tertiary-color);
+}
+
+.blur.visible {
+    opacity: 1;
+}
+
+img{
+    box-sizing: border-box;
+}
+
+.rhombus {
+    width: 40vw;
+    height: 40vw;
+    transform: rotate(45deg);
+    background-color: var(--light-color);
+    border-radius: 45px;
+}
+
+
+.container_obj {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    background: url('../immagini/Mappa/Sfondo_Home_2.jpg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container_obj_animals {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    background: url('../immagini/Mappa/Sfondo_BotanicaeAnimali.jpg') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.trasparency_bg  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_wardrobe {
+    width: 50%;
+    height: 1100px;
+    overflow: hidden;
+    background: url('../immagini/Oggettistica/Armadio.png') no-repeat center top;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.container_grid{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 140px 140px 140px 140px 140px;
+    margin-top: 120px;
+    margin-left:0;
+    column-gap: 30px;
+
+}
+
+.content_img {
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+}
+
+.img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.cont_img_label {
+    width: 70%;
+    height: 70%;
+    cursor: pointer;
+    margin-left:80px;
+    margin-top:-100px;
+    z-index: 10;
+    transform: rotate(-29deg);
+}
+
+
+.cont_img_sm {
+    width: 50%;
+   height: 80%;
+    cursor: pointer;
+}
+
+.img_sm {
+    width: 80px;
+    height: 120px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.img_md {
+    width: 140px;
+    height: 160px;
+    margin-top:-20px;
+    cursor: pointer;
+}
+
+.img_big {
+    width: 140px;
+    height: 120px;
+    cursor: pointer;
+}
+
+
+.label_wardrobe:hover{
+    transform: scale(3.0) rotate(-25deg);
+    transition: transform 0.5s ease;
+
+}
+
+.Text_label {
+    opacity: 0;
+    position: absolute;
+    color: var(--primary-color);
+    margin-top: -20%;
+    margin-left:32%;
+    text-align: right;
+    transform: rotate(10deg);
+    transition: transform 0.5s ease-in;
+}
+
+.Text_label_long {
+    opacity: 0;
+    position: absolute;
+    color: var(--primary-color);
+    margin-left:130px;
+    margin-top:-100px;
+    text-align: left;
+    transform: rotate(10deg);
+    transition: transform 0.5s ease-in;
+    line-height:1.2;
+}
+
+.label_wardrobe:hover +.Text_label {
+    display: block;
+    opacity: 1;
+}
+
+
+.img:hover {
+    transform: scale(1.25);
+}
+
+.img_sm:hover {
+    transform: scale(1.25);
+}
+
+.img_md:hover{
+    transform: scale(1.25);
+}
+
+.img_big:hover {
+    transform: scale(1.25);
+}
+
+.btn-rhombus {
+    width: 80px;
+    height: 80px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    transform:rotate(45deg) ;
+}
+
+#cart {
+    background-color: var(--tertiary-color); top:52%; right:19%;
+}
+
+#favourite {
+    background-color: var(--light-color);
+    top:59%;
+    right:24%;
+}
+
+.p_product{
+    transform:rotate(-45deg) ;
+}
+
+.product{
+   filter: drop-shadow(var(--ombra) 0.25rem 0.25rem 10px);
+}
+
+.posiz_rhombus{
+    top:20%;
+    left:30%;
+}
+.descr_card_Animali {
+    color: var(--primary-color);
+    background-image: url("../immagini/Mappa/Sfondo_Carta.jpg");
+}
+
+.descr_card {
+    width:350px;
+    padding: 5px;
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+    overflow-y: hidden;
+    box-shadow: 0 25px 15px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.base_text{
+    height:90px;
+}
+
+.seemore{
+    cursor: pointer;
+}
+
+.content_img_label_v {
+    position: absolute;
+    width:12vw;
+    transform: rotate(150deg);
+    cursor: pointer;
+    top:25%;
+}
+
+.label_top {
+    top: 25%;
+    left:-25%;
+}
+
+.label_wardrobe_v:hover{
+    transform: scale(3.0) rotate(150deg);
+    transition: transform 0.5s ease;
+}
+
+.label_wardrobe_v:hover + .text_label_v {
+    opacity: 1;
+}
+.menu.open svg rect {
+    fill: var(--secondary-color);
+}
+
+.text_label_v {
+    opacity: 0;
+    position: absolute;
+    color: var(--primary-color);
+    text-align: left;
+    transform: rotate(-2deg)
+
+}
+.last.content_img_label_v {
+    transform: rotate(-25deg);
+}
+
+.last.content_img_label_v:hover{
+    transform: scale(3.0) rotate(-25deg) translateX(-20%);
+    transition: transform 0.5s ease;
+}
+
+.menu svg rect {
+    transition: 0.2s;
+    fill: var(--tertiary-color);
+}
+
+.blur.visible {
+    opacity: 1;
+}
+
+
+
